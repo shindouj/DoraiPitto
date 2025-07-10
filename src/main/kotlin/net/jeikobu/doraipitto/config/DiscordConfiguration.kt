@@ -8,15 +8,16 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-class BotConfiguration {
+class DiscordConfiguration {
     @Value("\${doraipitto.discord.token}")
     private lateinit var token: String
 
     @Bean
-    fun <T: Event> discordClient(eventListeners: List<EventListener<T>>) =
+    fun <T : Event> discordClient(eventListeners: List<EventListener<T>>) =
         DiscordClientBuilder.create(token).build().gateway().login().block().also { client ->
             for (listener in eventListeners) {
-                client?.on(listener.getEventType(), listener::execute)
+                client
+                    ?.on(listener.getEventType(), listener::execute)
                     ?.onErrorResume(listener::handleError)
                     ?.subscribe()
             }

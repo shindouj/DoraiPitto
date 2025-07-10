@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: 'doraipitto'
+  profiles:
+    active: 'local'
+
+
+
+doraipitto:
+  discord:
+    token: ${DISCORD_TOKEN}
+  twitter:
+    host: ${TWITTER_HOST:https://vxtwitter.com}
+  instagram:
+    host: ${INSTAGRAM_HOST:https://instagramez.com}
+  reddit:
+    host: ${REDDIT_HOST:https://vxreddit.com}

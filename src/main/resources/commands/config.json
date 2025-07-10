@@ -1,0 +1,31 @@
+{
+  "name": "config",
+  "description": "Allows changing guild configuration",
+  "default_member_permissions": "8",
+  "options": [
+    {
+      "name": "use-reply",
+      "description": "Should the bot reply to user's message?",
+      "type": 5,
+      "required": false
+    },
+    {
+      "name": "use-silent",
+      "description": "Should the bot send a silent message or a regular one?",
+      "type": 5,
+      "required": false
+    },
+    {
+      "name": "mention-user",
+      "description": "When replying, should the user be mentioned?",
+      "type": 5,
+      "required": false
+    },
+    {
+      "name": "remove-original-embed",
+      "description": "Should the bot remove the embed from the original message?",
+      "type": 5,
+      "required": false
+    }
+  ]
+}

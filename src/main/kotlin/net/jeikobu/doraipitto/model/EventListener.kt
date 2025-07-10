@@ -6,8 +6,9 @@ import reactor.core.publisher.Mono
 
 private val log = KotlinLogging.logger {}
 
-interface EventListener<T: Event> {
+interface EventListener<T : Event> {
     fun getEventType(): Class<T>
+
     fun execute(event: T): Mono<Void>
 
     fun handleError(error: Throwable): Mono<Void> {
