@@ -6,3 +6,4 @@ spring:
       database: ${MONGODB_DATABASE:doraipitto}
       username: ${MONGODB_USERNAME:doraipitto}
       password: ${MONGODB_PASSWORD}
+      authentication-database: admin
